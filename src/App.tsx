@@ -1,4 +1,5 @@
 import './App.css'
+import { HowItWorks } from './components/HowItWorks'
 
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
@@ -12,6 +13,7 @@ function App() {
 
       <main>
         <Hero />
+        <HowItWorks />
 
         <section
           className="home-page__temporary-lots"
