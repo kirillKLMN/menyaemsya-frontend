@@ -1,6 +1,6 @@
 import './App.css'
 import { HowItWorks } from './components/HowItWorks'
-
+import { Benefits } from './components/Benefits'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { LotCard } from './components/LotCard'
@@ -14,6 +14,7 @@ function App() {
       <main>
         <Hero />
         <HowItWorks />
+        <Benefits />
 
         <section
           className="home-page__temporary-lots"
