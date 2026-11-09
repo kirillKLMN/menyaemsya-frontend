@@ -1,0 +1,29 @@
+.home-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      123deg,
+      rgb(192 130 255 / 25%),
+      rgb(138 169 255 / 25%)
+    ) top center / 100% 688px no-repeat,
+    var(--color-background);
+}
+
+.home-page__temporary-lots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding: 72px 5%;
+  background: var(--color-background);
+}
+
+@media (max-width: 800px) {
+  .home-page {
+    background: var(--color-background);
+  }
+
+  .home-page__temporary-lots {
+    grid-template-columns: 1fr;
+    padding: 60px 20px;
+  }
+}
