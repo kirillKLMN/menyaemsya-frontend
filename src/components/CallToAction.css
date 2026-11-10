@@ -1,0 +1,82 @@
+.call-to-action {
+  width: 100%;
+  background: linear-gradient(
+    105deg,
+    #2f5bea 0%,
+    #6c8fff 100%
+  );
+}
+
+.call-to-action__container {
+  display: flex;
+  width: 100%;
+  max-width: 1760px;
+  min-height: 230px;
+  margin: 0 auto;
+  padding: 48px clamp(20px, 5vw, 72px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.call-to-action__title {
+  max-width: 850px;
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.call-to-action__button {
+  display: inline-flex;
+  min-width: 180px;
+  min-height: 54px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border: 0;
+  border-radius: 18px;
+  background: #fff;
+  color: #14253e;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.call-to-action__button:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+@media (max-width: 800px) {
+  .call-to-action__container {
+    min-height: 210px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 28px;
+    padding: 32px 20px;
+  }
+
+  .call-to-action__title {
+    max-width: 100%;
+    font-size: 27px;
+    line-height: 1.2;
+  }
+
+  .call-to-action__button {
+    min-height: 48px;
+    align-self: flex-end;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .call-to-action__title {
+    font-size: 24px;
+  }
+}
