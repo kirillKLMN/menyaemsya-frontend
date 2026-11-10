@@ -1,38 +1,41 @@
+import type { Lot } from '../types/lot'
 
-import type { Lot } from '../types/lot';
+import bikeImage from '../assets/lots/lot-bike.png'
+import englishImage from '../assets/lots/lot-english.png'
+import toolsImage from '../assets/lots/lot-tools.png'
 
 export const mockLots: Lot[] = [
   {
     id: 1,
     ownerId: 1,
-    title: 'Горный велосипед',
+    title: 'Горный велосипед, 21 скорость',
     description: 'В хорошем состоянии, использовался один сезон.',
     type: 'product',
     categoryId: 1,
-    imageUrls: [],
-    estimatedPrice: 15000,
-    desiredExchange: 'Смартфон или ноутбук',
+    imageUrls: [bikeImage],
+    estimatedPrice: 12000,
+    desiredExchange: 'электросамокат',
   },
   {
     id: 2,
     ownerId: 2,
-    title: 'Уроки английского языка',
-    description: 'Индивидуальные занятия для начинающих.',
+    title: 'Репетитор английского, 5 занятий',
+    description: 'Индивидуальные занятия английским языком.',
     type: 'service',
     categoryId: 2,
-    imageUrls: [],
-    estimatedPrice: 1500,
-    desiredExchange: 'Услуги дизайнера',
+    imageUrls: [englishImage],
+    estimatedPrice: 5000,
+    desiredExchange: 'услуги дизайнера',
   },
   {
     id: 3,
     ownerId: 3,
-    title: 'Набор инструментов',
-    description: 'Набор ручных инструментов для ремонта дома.',
+    title: 'Набор инструментов, 120 предметов',
+    description: 'Набор инструментов для ремонта дома.',
     type: 'product',
     categoryId: 3,
-    imageUrls: [],
-    estimatedPrice: 5000,
-    desiredExchange: 'Товары для спорта',
+    imageUrls: [toolsImage],
+    estimatedPrice: 6000,
+    desiredExchange: 'садовая техника',
   },
-];
+]
