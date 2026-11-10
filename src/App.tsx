@@ -1,6 +1,7 @@
-
 import './App.css'
 
+import { CallToAction } from './components/CallToAction'
+import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { HowItWorks } from './components/HowItWorks'
@@ -20,7 +21,10 @@ function App() {
         <Benefits />
         <PopularCategories />
         <FreshLots lots={mockLots} />
+        <CallToAction />
       </main>
+
+      <Footer />
     </div>
   )
 }
