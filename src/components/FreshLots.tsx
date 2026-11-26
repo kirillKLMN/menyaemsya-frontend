@@ -1,4 +1,5 @@
 import type { Lot } from '../types/lot'
+import { Link } from 'react-router'
 import { LotCard } from './LotCard'
 import './FreshLots.css'
 
@@ -19,9 +20,9 @@ function FreshLots({ lots }: FreshLotsProps) {
             Свежие лоты
           </h2>
 
-          <span className="fresh-lots__catalog fresh-lots__catalog--desktop">
+          <Link to="/catalog" className="fresh-lots__catalog fresh-lots__catalog--desktop">
             Весь каталог →
-          </span>
+          </Link>
         </div>
 
         <div className="fresh-lots__grid">
@@ -30,9 +31,9 @@ function FreshLots({ lots }: FreshLotsProps) {
           ))}
         </div>
 
-        <span className="fresh-lots__catalog fresh-lots__catalog--mobile">
+        <Link to="/catalog" className="fresh-lots__catalog fresh-lots__catalog--mobile">
           Весь каталог →
-        </span>
+        </Link>
       </div>
     </section>
   )

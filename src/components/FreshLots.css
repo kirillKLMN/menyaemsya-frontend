@@ -33,6 +33,11 @@
   font-size: 17px;
   font-weight: 500;
   white-space: nowrap;
+  text-decoration: none;
+}
+
+.fresh-lots__catalog:hover {
+  text-decoration: underline;
 }
 
 .fresh-lots__catalog--mobile {
@@ -53,7 +58,7 @@
 
 @media (max-width: 800px) {
   .fresh-lots {
-    padding: 40px 20px 80px;
+    padding: 40px 20px 50px;
   }
 
   .fresh-lots__header {
@@ -62,9 +67,9 @@
 
   .fresh-lots__title {
     color: #000;
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .fresh-lots__catalog--desktop {
@@ -79,6 +84,7 @@
   .fresh-lots__catalog--mobile {
     display: block;
     margin-top: 40px;
+    font-size: 20px;
     text-align: right;
   }
 }

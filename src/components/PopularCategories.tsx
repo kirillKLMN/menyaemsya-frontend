@@ -1,4 +1,5 @@
 import './PopularCategories.css'
+import { Link } from 'react-router'
 
 const categories = [
   { slug: 'electronics', title: 'Электроника' },
@@ -32,12 +33,12 @@ function PopularCategories() {
               className="popular-categories__item"
               key={category.slug}
             >
-              <a
+              <Link
                 className="popular-categories__link"
-                href={`/catalog?category=${category.slug}`}
+                to={`/catalog?category=${category.slug}`}
               >
                 {category.title}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

@@ -1,0 +1,140 @@
+.demo-page {
+  width: 100%;
+  min-height: calc(100vh - 268px);
+  padding: 48px 5% 80px;
+  background: var(--color-background);
+}
+
+.demo-page__container {
+  max-width: 1296px;
+  margin-inline: auto;
+}
+
+.demo-page__back {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.demo-page__title {
+  margin: 24px 0 14px;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 500;
+}
+
+.demo-page__intro {
+  max-width: 620px;
+  color: var(--color-muted);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.demo-page__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 32px 0;
+}
+
+.demo-page__field {
+  display: flex;
+  min-width: min(280px, 100%);
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.demo-page__field input,
+.demo-page__field select {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #dfe6ef;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--color-text);
+  font: inherit;
+}
+
+.demo-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.demo-page__empty,
+.demo-page__preview {
+  padding: 48px;
+  border: 1px solid #dfe6ef;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.demo-page__preview {
+  max-width: 720px;
+  margin: 50px auto;
+  background: linear-gradient(135deg, #fff, #e9e5ff);
+}
+
+.demo-page__status {
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.demo-page__button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 0 24px;
+  border-radius: 14px;
+  background: var(--color-primary);
+  color: white;
+  text-decoration: none;
+}
+
+.demo-page__details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+  margin-top: 32px;
+}
+
+.demo-page__details > img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.demo-page__price {
+  font-family: var(--font-heading);
+  font-size: 28px;
+}
+
+.demo-page__note {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  .demo-page {
+    padding: 28px 20px 60px;
+  }
+
+  .demo-page__grid,
+  .demo-page__details {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-page__empty,
+  .demo-page__preview {
+    padding: 28px 20px;
+  }
+
+  .demo-page__details {
+    gap: 20px;
+  }
+}

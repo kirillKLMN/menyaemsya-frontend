@@ -15,14 +15,12 @@ function CallToAction() {
           что вам предложит система
         </h2>
 
-        <button
+        <a
           className="call-to-action__button"
-          type="button"
-          disabled
-          title="Создание лотов пока недоступно"
+          href="/lots/new"
         >
           Начать обмен
-        </button>
+        </a>
       </div>
     </section>
   )

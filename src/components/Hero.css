@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 14px;
   width: 100%;
   max-width: 1920px;
   min-height: 600px;
@@ -38,7 +38,7 @@
   color: var(--color-primary);
   font-family: var(--font-accent);
   font-size: 1.25em;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 0.9;
   white-space: nowrap;
 }
@@ -114,8 +114,8 @@
 
 .hero__illustration {
   display: block;
-  flex: 0 1 497px;
-  width: min(36vw, 497px);
+  flex: 0 1 654px;
+  width: min(45vw, 654px);
   min-width: 0;
   height: auto;
   object-fit: contain;
@@ -156,11 +156,11 @@
   }
 
   .hero__title-accent {
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
+    color: var(--color-primary);
+    font-family: var(--font-accent);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 0.9;
   }
 
   .hero__bottom {
@@ -195,9 +195,9 @@
   .hero__button--secondary {
     flex: 0 1 160px;
     min-width: 0;
-    border-color: #000;
+    border-color: var(--color-primary);
     background: rgb(255 255 255 / 50%);
-    color: #000;
+    color: var(--color-primary);
   }
 
   .hero__illustration {

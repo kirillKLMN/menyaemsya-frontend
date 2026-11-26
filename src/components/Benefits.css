@@ -4,7 +4,7 @@
   height: 63px;
   align-items: center;
   overflow: hidden;
-  border: 2px solid #000;
+  border: 2px solid #8b7cf6;
   background: #fff;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .benefits__separator {
-  color: #000;
+  color: #8b7cf6;
   font-family: sans-serif;
   font-size: 30px;
   line-height: 1;
@@ -68,9 +68,20 @@
 
 @media (max-width: 800px) {
   .benefits {
-    height: 95px;
+    height: 62px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
     border-right: 0;
     border-left: 0;
+  }
+
+  .benefits__text {
+    font-size: 24px;
+    color: #000;
+  }
+
+  .benefits__separator {
+    color: #000;
   }
 }
 

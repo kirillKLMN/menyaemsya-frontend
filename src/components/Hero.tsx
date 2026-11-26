@@ -1,4 +1,4 @@
-import heroIllustration from '../assets/hero-swap-3d 1.png'
+import heroIllustration from '../assets/figma/hero-swap.png'
 import './Hero.css'
 
 function Hero() {
@@ -23,14 +23,14 @@ function Hero() {
             <div className="hero__actions">
               <a
                 className="hero__button hero__button--primary"
-                href="#create-lot"
+                href="/lots/new"
               >
                 Создать лот
               </a>
 
               <a
                 className="hero__button hero__button--secondary"
-                href="#catalog"
+                href="/catalog"
               >
                 Смотреть каталог
               </a>
@@ -42,8 +42,8 @@ function Hero() {
           className="hero__illustration"
           src={heroIllustration}
           alt=""
-          width="497"
-          height="497"
+          width="654"
+          height="524"
         />
       </div>
     </section>

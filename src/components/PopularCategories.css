@@ -20,11 +20,11 @@
 }
 
 .popular-categories__accent {
-  color: var(--color-primary);
-  font-family: var(--font-accent);
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 0.9;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 .popular-categories__list {
@@ -77,14 +77,14 @@
 
 @media (max-width: 800px) {
   .popular-categories {
-    padding: 40px 20px 0;
+    padding: 53px 20px 0;
   }
 
   .popular-categories__title {
     margin-bottom: 26px;
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.15;
   }
 

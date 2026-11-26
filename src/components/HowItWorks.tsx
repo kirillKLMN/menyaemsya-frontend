@@ -1,4 +1,10 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import type { KeyboardEvent, TouchEvent } from 'react'
+import stepCreate from '../assets/figma/step-create.svg'
+import stepCreateMobile from '../assets/figma/step-create-mobile.svg'
+import stepAI from '../assets/figma/step-ai.svg'
+import stepWanted from '../assets/figma/step-wanted.svg'
+import stepExchange from '../assets/figma/step-exchange.svg'
 import './HowItWorks.css'
 
 const steps = [
@@ -7,24 +13,29 @@ const steps = [
     title: 'Создайте лот',
     description: 'Название, описание, фото и примерная стоимость.',
     theme: 'lilac',
+    illustration: stepCreate,
+    mobileIllustration: stepCreateMobile,
   },
   {
     id: 2,
     title: 'Оцените с ИИ',
     description: 'Получите ориентировочный диапазон стоимости.',
     theme: 'blue',
+    illustration: stepAI,
   },
   {
     id: 3,
     title: 'Укажите желаемое',
     description: 'Товар, услуга или категория, которую хотите получить.',
-    theme: 'primary',
+    theme: 'peach',
+    illustration: stepWanted,
   },
   {
     id: 4,
     title: 'Предложите обмен',
     description: 'Отправьте предложение, а владелец примет или отклонит.',
-    theme: 'purple',
+    theme: 'mint',
+    illustration: stepExchange,
   },
 ] as const
 
@@ -36,6 +47,10 @@ type StepCardProps = {
 }
 
 function StepCard({ step, mobile = false }: StepCardProps) {
+  const illustration = mobile && 'mobileIllustration' in step
+    ? step.mobileIllustration
+    : step.illustration
+
   return (
     <article
       className={`how-it-works__card how-it-works__card--${step.theme} ${
@@ -45,6 +60,8 @@ function StepCard({ step, mobile = false }: StepCardProps) {
       <span className="how-it-works__number">
         {step.id}
       </span>
+
+      <img className="how-it-works__illustration" src={illustration} alt="" aria-hidden="true" />
 
       <div className="how-it-works__card-content">
         <h3 className="how-it-works__card-title">
@@ -61,17 +78,38 @@ function StepCard({ step, mobile = false }: StepCardProps) {
 
 function HowItWorks() {
   const [activeStep, setActiveStep] = useState(0)
+  const touchStart = useRef<{ x: number; y: number } | null>(null)
 
-  const showPreviousStep = () => {
-    setActiveStep((current) =>
-      (current - 1 + steps.length) % steps.length
+  function handleTouchStart(event: TouchEvent<HTMLDivElement>) {
+    const touch = event.touches[0]
+    touchStart.current = { x: touch.clientX, y: touch.clientY }
+  }
+
+  function handleTouchEnd(event: TouchEvent<HTMLDivElement>) {
+    if (!touchStart.current) return
+
+    const touch = event.changedTouches[0]
+    const distanceX = touch.clientX - touchStart.current.x
+    const distanceY = touch.clientY - touchStart.current.y
+    touchStart.current = null
+
+    if (Math.abs(distanceX) < 50 || Math.abs(distanceX) < Math.abs(distanceY) * 1.2) return
+
+    setActiveStep((current) => distanceX < 0
+      ? (current + 1) % steps.length
+      : (current - 1 + steps.length) % steps.length,
     )
   }
 
-  const showNextStep = () => {
-    setActiveStep((current) =>
-      (current + 1) % steps.length
-    )
+  function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
+    if (event.key === 'ArrowRight') {
+      event.preventDefault()
+      setActiveStep((current) => (current + 1) % steps.length)
+    }
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault()
+      setActiveStep((current) => (current - 1 + steps.length) % steps.length)
+    }
   }
 
   return (
@@ -94,30 +132,17 @@ function HowItWorks() {
           ))}
         </div>
 
-        <div className="how-it-works__mobile">
-          <button
-            className="how-it-works__arrow"
-            type="button"
-            onClick={showPreviousStep}
-            aria-label="Предыдущий шаг"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="28"
-              height="28"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M19 12H5M11 6l-6 6 6 6"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-
+        <div
+          className="how-it-works__mobile"
+          role="region"
+          aria-roledescription="карусель"
+          aria-label="Этапы обмена"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          onTouchCancel={() => { touchStart.current = null }}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+        >
           <div
             className="how-it-works__active-card"
             aria-live="polite"
@@ -125,28 +150,18 @@ function HowItWorks() {
             <StepCard step={steps[activeStep]} mobile />
           </div>
 
-          <button
-            className="how-it-works__arrow"
-            type="button"
-            onClick={showNextStep}
-            aria-label="Следующий шаг"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="28"
-              height="28"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M5 12h14m-6-6 6 6-6 6"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+          <div className="how-it-works__pagination" aria-label="Шаги работы сервиса">
+            {steps.map((step, index) => (
+              <button
+                key={step.id}
+                className={`how-it-works__dot${index === activeStep ? ' is-active' : ''}`}
+                type="button"
+                onClick={() => setActiveStep(index)}
+                aria-label={`Показать шаг ${step.id}: ${step.title}`}
+                aria-current={index === activeStep ? 'step' : undefined}
               />
-            </svg>
-          </button>
+            ))}
+          </div>
         </div>
       </div>
     </section>
