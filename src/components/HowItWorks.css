@@ -1,0 +1,218 @@
+.how-it-works {
+  width: 100%;
+  padding: 72px clamp(20px, 5vw, 72px);
+  background: var(--color-background);
+}
+
+.how-it-works__container {
+  width: 100%;
+  max-width: 1760px;
+  margin: 0 auto;
+}
+
+.how-it-works__title {
+  margin: 0 0 32px;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.how-it-works__desktop {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.how-it-works__card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  height: 225px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 30px 24px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  box-shadow: 0 0 24px rgb(0 0 0 / 14%);
+}
+
+.how-it-works__card--lilac {
+  border-color: #e5dcf9;
+  background: radial-gradient(ellipse 120px 95px at 80% 18%, rgb(197 178 255 / 65%), transparent 82%),
+    linear-gradient(136deg, #fff 14%, #f9f6ff 86%);
+}
+
+.how-it-works__card--blue {
+  border-color: #dde8fa;
+  background: radial-gradient(ellipse 120px 95px at 80% 18%, rgb(175 211 255 / 70%), transparent 82%),
+    linear-gradient(136deg, #fff 14%, #f5f9ff 86%);
+}
+
+.how-it-works__card--peach {
+  border-color: #f4e3d5;
+  background: radial-gradient(ellipse 120px 95px at 80% 18%, rgb(197 178 255 / 68%), transparent 82%),
+    linear-gradient(136deg, #fff 14%, #fff9f3 86%);
+}
+
+.how-it-works__card--mint {
+  border-color: #d9ece2;
+  background: radial-gradient(ellipse 120px 95px at 80% 18%, rgb(175 211 255 / 65%), transparent 82%),
+    linear-gradient(136deg, #fff 14%, #f4fbf7 86%);
+}
+
+.how-it-works__number {
+  display: flex;
+  width: 38px;
+  height: 26px;
+  align-items: center;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.how-it-works__illustration {
+  position: absolute;
+  top: 24px;
+  right: 20px;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 86px;
+  max-height: 82px;
+  pointer-events: none;
+}
+
+.how-it-works__card-content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.how-it-works__card-title {
+  margin: 0;
+  color: #14253e;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.how-it-works__card-description {
+  margin: 0;
+  color: #68778d;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.how-it-works__mobile {
+  display: none;
+}
+
+@media (min-width: 801px) and (max-width: 1199px) {
+  .how-it-works__desktop {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .how-it-works {
+    padding: 77px 20px 26px;
+  }
+
+  .how-it-works__title {
+    margin-bottom: 24px;
+    font-size: 28px;
+    line-height: 0.8;
+  }
+
+  .how-it-works__desktop {
+    display: none;
+  }
+
+  .how-it-works__mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 23px;
+    touch-action: pan-y;
+  }
+
+  .how-it-works__active-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .how-it-works__card--mobile {
+    width: 100%;
+    height: 244px;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 30px 24px;
+  }
+
+  .how-it-works__card--mobile .how-it-works__number {
+    width: 38px;
+    height: 26px;
+  }
+
+  .how-it-works__card--mobile .how-it-works__illustration {
+    top: 30px;
+    right: 24px;
+    max-width: 112px;
+    max-height: 100px;
+  }
+
+  .how-it-works__card--mobile .how-it-works__card-content {
+    max-width: 264px;
+  }
+
+  .how-it-works__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .how-it-works__dot {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #a2c1ff;
+    cursor: pointer;
+  }
+
+  .how-it-works__dot.is-active {
+    background: #565d67;
+  }
+
+  .how-it-works__mobile:focus-visible,
+  .how-it-works__dot:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+  }
+}
+
+@media (max-width: 360px) {
+  .how-it-works__card--mobile {
+    padding: 16px;
+  }
+
+  .how-it-works__card-title {
+    font-size: 18px;
+  }
+
+  .how-it-works__card-description {
+    font-size: 14px;
+  }
+}
