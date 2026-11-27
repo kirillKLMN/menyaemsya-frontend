@@ -1,0 +1,567 @@
+.create-lot-app {
+  min-height: 100vh;
+  background: #f3f6fd;
+}
+
+@media (min-width: 801px) {
+  .create-lot-app .site-header {
+    border-bottom: 1px solid #dfe6ef;
+    background: #fff;
+    backdrop-filter: none;
+  }
+
+  .create-lot-app .site-header--catalog-demo .site-header__account-navigation {
+    display: none;
+  }
+}
+
+.create-lot-app .site-footer__container {
+  min-height: 160px;
+}
+
+.create-lot-page {
+  min-height: 2429px;
+  color: #14253e;
+  background: #f3f6fd;
+  font-family: var(--font-body);
+}
+
+.create-lot-page__container {
+  width: calc(100% - 48px);
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.create-lot-page__breadcrumbs {
+  display: flex;
+  gap: 6px;
+  color: #68778d;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.create-lot-page__title {
+  margin: 40px 0 30px;
+  color: #14253e;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+.create-lot-page__card {
+  min-width: 0;
+  margin-top: 30px;
+  padding: 40px 30px;
+  border: 1px solid #dfe6ef;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.create-lot-page__card:first-of-type {
+  margin-top: 0;
+}
+
+.create-lot-page__card h2 {
+  margin: 0;
+  color: #000;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.create-lot-page__main-card {
+  min-height: 740px;
+}
+
+.create-lot-page__field-group {
+  margin-top: 22px;
+}
+
+.create-lot-page__label {
+  display: block;
+  color: #000;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.create-lot-page__field-group > input,
+.create-lot-page__field-group > textarea,
+.create-lot-page__price-row input,
+.create-lot-page__characteristics-fields input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin-top: 20px;
+  padding: 13px 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  outline: none;
+  background: #fff;
+  color: #14253e;
+  font: 400 16px/22px var(--font-body);
+}
+
+.create-lot-page__field-group > input,
+.create-lot-page__price-row input,
+.create-lot-page__characteristics-fields input {
+  height: 50px;
+}
+
+.create-lot-page__field-group > textarea {
+  height: 124px;
+  resize: vertical;
+}
+
+.create-lot-page input::placeholder,
+.create-lot-page textarea::placeholder {
+  color: #8090a8;
+  opacity: 1;
+}
+
+.create-lot-page input:focus-visible,
+.create-lot-page textarea:focus-visible,
+.create-lot-page button:focus-visible,
+.create-lot-page a:focus-visible {
+  outline: 2px solid #2f5bea;
+  outline-offset: 2px;
+}
+
+.create-lot-page input[aria-invalid='true'],
+.create-lot-page textarea[aria-invalid='true'] {
+  border-color: #d64545;
+}
+
+.create-lot-page__label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.create-lot-page__label-row > span {
+  color: #8090a8;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.create-lot-page__type-control {
+  display: grid;
+  width: 340px;
+  max-width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin-top: 20px;
+  padding: 3px;
+  border-radius: 10px;
+  background: #faf3ff;
+}
+
+.create-lot-page__type-control button {
+  min-height: 36px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #68778d;
+  font: 400 16px/20px var(--font-body);
+  cursor: pointer;
+}
+
+.create-lot-page__type-control button.is-selected {
+  background: #f0ddff;
+  color: #58218a;
+}
+
+.create-lot-page__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.create-lot-page__chips button {
+  min-height: 47px;
+  padding: 10px 22px;
+  border: 1px solid #b694d5;
+  border-radius: 24px;
+  background: #fff;
+  color: #14253e;
+  font: 400 16px/24px var(--font-body);
+  cursor: pointer;
+}
+
+.create-lot-page__chips button.is-selected {
+  border-color: #9658c8;
+  background: #f0ddff;
+  color: #58218a;
+}
+
+.create-lot-page__error {
+  margin: 8px 0 0;
+  color: #b52828;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.create-lot-page__section-note {
+  margin: 18px 0 0;
+  color: #68778d;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.create-lot-page__photos-card {
+  min-height: 548px;
+}
+
+.create-lot-page__hidden-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.create-lot-page__dropzone {
+  display: flex;
+  min-height: 184px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  border: 2px dashed #a6c2ff;
+  border-radius: 10px;
+  background: #eff5ff;
+}
+
+.create-lot-page__dropzone.is-dragging {
+  border-color: #2f5bea;
+  background: #e4edff;
+}
+
+.create-lot-page__dropzone p {
+  margin: 0;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.create-lot-page__dropzone button {
+  min-width: 211px;
+  min-height: 47px;
+  padding: 10px 20px;
+  border: 1px solid #2f5bea;
+  border-radius: 18px;
+  background: #fff;
+  color: #2f5bea;
+  font: 500 16px/23px var(--font-body);
+  cursor: pointer;
+}
+
+.create-lot-page__dropzone button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.create-lot-page__photo-slots {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.create-lot-page__photo-slot {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 170 / 170;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f1f7fd;
+}
+
+.create-lot-page__photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.create-lot-page__photo-slot > button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #14253e;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.create-lot-page__main-photo-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background: #2f5bea;
+  color: #fff;
+  font-size: 11px;
+}
+
+.create-lot-page__characteristics-card {
+  min-height: 231px;
+}
+
+.create-lot-page__hint {
+  display: flex;
+  min-height: 67px;
+  align-items: center;
+  margin-top: 15px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background: #faf3ff;
+  color: #68778d;
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.create-lot-page__characteristics-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.create-lot-page__characteristics-fields label span {
+  color: #14253e;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.create-lot-page__characteristics-fields input {
+  margin-top: 10px;
+}
+
+.create-lot-page__price-card {
+  min-height: 459px;
+}
+
+.create-lot-page__price-card .create-lot-page__field-group {
+  margin-top: 20px;
+}
+
+.create-lot-page__price-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2.7fr) minmax(220px, 1fr);
+  gap: 70px;
+  align-items: end;
+  margin-top: 20px;
+}
+
+.create-lot-page__price-row input {
+  margin-top: 0;
+}
+
+.create-lot-page__ai-button {
+  min-height: 50px;
+  padding: 10px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #fff;
+  color: #14253e;
+  font: 400 16px/22px var(--font-body);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.create-lot-page__ai-button:disabled {
+  color: #68778d;
+  cursor: not-allowed;
+}
+
+.create-lot-page__ai-hint {
+  margin-top: 20px;
+}
+
+.create-lot-page__last-field {
+  margin-top: 20px;
+}
+
+.create-lot-page__notice {
+  margin: 24px 0 -8px;
+  padding: 16px 20px;
+  border: 1px solid #bacafa;
+  border-radius: 12px;
+  background: #edf3ff;
+  color: #23449e;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.create-lot-page__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.create-lot-page__cancel {
+  color: #14253e;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.create-lot-page__action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.create-lot-page__action-buttons button {
+  min-height: 54px;
+  padding: 14px 24px;
+  border-radius: 18px;
+  font: 500 17px/24px var(--font-body);
+  cursor: pointer;
+}
+
+.create-lot-page__save {
+  border: 1px solid #2f5bea;
+  background: #fff;
+  color: #2f5bea;
+}
+
+.create-lot-page__publish {
+  border: 1px solid #2f5bea;
+  background: #2f5bea;
+  color: #fff;
+}
+
+.create-lot-page__publish:hover {
+  background: #244cce;
+}
+
+@media (max-width: 1100px) {
+  .create-lot-page__photo-slots {
+    gap: 16px;
+  }
+
+  .create-lot-page__price-row {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .create-lot-page {
+    min-height: 0;
+    padding-bottom: 80px;
+  }
+
+  .create-lot-page__container {
+    width: calc(100% - 28px);
+    padding-top: 24px;
+  }
+
+  .create-lot-page__title {
+    margin: 28px 0 24px;
+    font-size: 28px;
+  }
+
+  .create-lot-page__card {
+    min-height: 0;
+    margin-top: 20px;
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .create-lot-page__card h2 {
+    font-size: 24px;
+  }
+
+  .create-lot-page__field-group {
+    margin-top: 20px;
+  }
+
+  .create-lot-page__chips {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .create-lot-page__chips button {
+    min-height: 40px;
+    padding: 8px 14px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .create-lot-page__type-control {
+    margin-top: 12px;
+  }
+
+  .create-lot-page__field-group > input,
+  .create-lot-page__field-group > textarea {
+    margin-top: 12px;
+  }
+
+  .create-lot-page__photo-slots {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .create-lot-page__price-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .create-lot-page__characteristics-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .create-lot-page__actions {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 450px) {
+  .create-lot-page__section-note,
+  .create-lot-page__hint {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .create-lot-page__photo-slots {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .create-lot-page__actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .create-lot-page__action-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .create-lot-page__action-buttons button {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .create-lot-page__cancel {
+    text-align: center;
+  }
+}
