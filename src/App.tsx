@@ -13,6 +13,7 @@ import { FreshLots } from './components/FreshLots'
 import { mockLots } from './data/mockLots'
 import { LotDetailsPage, PreviewPage } from './pages/DemoPages'
 import { CatalogPage } from './pages/CatalogPage/CatalogPage'
+import { AuthPage } from './pages/AuthPage/AuthPage'
 
 function ScrollOnNavigation() {
   const { pathname, search, hash } = useLocation()
@@ -32,9 +33,10 @@ function ScrollOnNavigation() {
 
 function App() {
   const location = useLocation()
+  const isAuthPage = location.pathname === '/login' || location.pathname === '/register'
 
   return (
-    <div className={location.pathname === '/' ? 'home-page' : location.pathname === '/catalog' ? 'catalog-app' : 'app-page'}>
+    <div className={isAuthPage ? 'auth-app' : location.pathname === '/' ? 'home-page' : location.pathname === '/catalog' ? 'catalog-app' : 'app-page'}>
       <ScrollOnNavigation />
       <Header showDemoCatalogUser={location.pathname === '/catalog'} />
 
@@ -52,13 +54,13 @@ function App() {
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/lots/:id" element={<LotDetailsPage />} />
         <Route path="/lots/new" element={<PreviewPage title="Создание лота" description="Форма создания лота появится здесь. Пока можно посмотреть тестовые предложения в каталоге." />} />
-        <Route path="/login" element={<PreviewPage title="Вход в аккаунт" description="Экран входа подготовим по макету Figma и подключим к API авторизации." />} />
-        <Route path="/register" element={<PreviewPage title="Регистрация" description="Экран регистрации подготовим по макету Figma и подключим к API авторизации." />} />
+        <Route path="/login" element={<AuthPage mode="login" />} />
+        <Route path="/register" element={<AuthPage mode="register" />} />
         <Route path="/map" element={<PreviewPage title="Карта объявлений" description="Интерактивную карту подключим вместе с геоданными объявлений. Сейчас можно просмотреть предложения в каталоге." />} />
         <Route path="*" element={<PreviewPage title="Страница не найдена" description="Такого адреса пока нет в приложении." />} />
       </Routes>
 
-      <Footer />
+      {!isAuthPage && <Footer />}
     </div>
   )
 }
