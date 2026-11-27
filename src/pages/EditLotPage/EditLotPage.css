@@ -1,0 +1,206 @@
+.edit-lot-page .create-lot-page__main-card {
+  min-height: 748px;
+}
+
+.edit-lot-page .create-lot-page__photos-card {
+  min-height: 344px;
+}
+
+.edit-lot-page .create-lot-page__characteristics-card {
+  min-height: 419px;
+}
+
+.edit-lot-page .create-lot-page__price-card {
+  min-height: 459px;
+}
+
+.edit-lot-page .create-lot-page__chips button.is-selected {
+  border-color: #a15bcc;
+  background: #a15bcc;
+  color: #fff;
+}
+
+.edit-lot-page__photos {
+  margin-top: 20px;
+}
+
+.edit-lot-page__photos .create-lot-page__photo-slot > button {
+  top: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  color: #2f5bea;
+  font-size: 19px;
+  line-height: 20px;
+}
+
+.edit-lot-page__add-photo {
+  display: flex;
+  width: 100%;
+  min-height: 170px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border: 2px dashed #aac3ff;
+  border-radius: 10px;
+  background: #f1f6ff;
+  color: #2f5bea;
+  font: 500 16px/22px var(--font-body);
+  cursor: pointer;
+}
+
+.edit-lot-page__add-photo span {
+  font-size: 27px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.edit-lot-page__add-photo:hover {
+  border-color: #2f5bea;
+  background: #e6efff;
+}
+
+.edit-lot-page__characteristics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 70px;
+  row-gap: 20px;
+  margin-top: 20px;
+}
+
+.edit-lot-page__characteristics-grid > label,
+.edit-lot-page__extra-characteristic label {
+  display: block;
+  min-width: 0;
+}
+
+.edit-lot-page__characteristics-grid input {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #fff;
+  color: #14253e;
+  font: 400 16px/22px var(--font-body);
+}
+
+.edit-lot-page__extra-characteristic {
+  position: relative;
+  display: contents;
+}
+
+.edit-lot-page__extra-characteristic > button {
+  grid-column: 1 / -1;
+  justify-self: end;
+  margin-top: -12px;
+  border: 0;
+  background: transparent;
+  color: #bf3333;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.edit-lot-page__add-characteristic {
+  display: block;
+  margin: 20px auto 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #2f5bea;
+  font: 500 20px/23px var(--font-body);
+  cursor: pointer;
+}
+
+.edit-lot-page .create-lot-page__ai-button:not(:disabled) {
+  border-color: #2f5bea;
+  background: #4b72ed;
+  box-shadow: 0 3px 14px rgb(47 91 234 / 25%);
+  color: #fff;
+}
+
+.edit-lot-page__actions {
+  justify-content: flex-end;
+  gap: 36px;
+  margin-top: 30px;
+}
+
+.edit-lot-page__delete {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #f32727;
+  font: 500 16px/21px var(--font-body);
+  cursor: pointer;
+}
+
+.edit-lot-page__save {
+  min-width: 237px;
+  min-height: 54px;
+  padding: 14px 24px;
+  border: 1px solid #2f5bea;
+  border-radius: 18px;
+  background: #2f5bea;
+  color: #fff;
+  font: 500 17px/24px var(--font-body);
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .edit-lot-page__characteristics-grid {
+    column-gap: 20px;
+  }
+
+  .edit-lot-page__add-photo {
+    min-height: 0;
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 800px) {
+  .edit-lot-page .create-lot-page__card {
+    min-height: 0;
+  }
+
+  .edit-lot-page__characteristics-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .edit-lot-page__characteristics-grid input {
+    margin-top: 10px;
+  }
+
+  .edit-lot-page__add-characteristic {
+    font-size: 16px;
+  }
+
+  .edit-lot-page__actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 450px) {
+  .edit-lot-page__photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .edit-lot-page__actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .edit-lot-page__save {
+    width: 100%;
+  }
+
+  .edit-lot-page__delete {
+    text-align: center;
+  }
+}

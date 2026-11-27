@@ -23,7 +23,7 @@ type ErrorField = 'category' | 'title' | 'description' | 'condition' | 'desiredE
 type Errors = Partial<Record<ErrorField, string>>
 
 const DRAFT_STORAGE_KEY = 'menyaemsya-create-lot-draft-v1'
-const MAX_PHOTOS = 3
+const MAX_PHOTOS = 4
 const MAX_PHOTO_BYTES = 10 * 1024 * 1024
 
 const initialDraft: Draft = {
@@ -145,7 +145,7 @@ function CreateLotPage() {
     setPhotoError([
       invalid ? 'Разрешены только JPG и PNG.' : '',
       tooLarge ? 'Размер каждого файла должен быть до 10 МБ.' : '',
-      tooMany ? 'Можно добавить не более трёх фото.' : '',
+      tooMany ? 'Можно добавить не более четырёх фото.' : '',
     ].filter(Boolean).join(' '))
     setNotice('')
   }
@@ -257,7 +257,7 @@ function CreateLotPage() {
 
           <section className="create-lot-page__card create-lot-page__photos-card" aria-labelledby="create-photos-heading">
             <h2 id="create-photos-heading">Фотографии</h2>
-            <p className="create-lot-page__section-note">До 3 фото, JPG или PNG до 10 МБ. Первое фото станет главным</p>
+            <p className="create-lot-page__section-note">До 4 фото, JPG или PNG до 10 МБ. Первое фото станет главным</p>
             <input ref={inputRef} type="file" accept="image/jpeg,image/png" multiple className="create-lot-page__hidden-input" onChange={handleFileChange} aria-label="Выбрать фотографии" />
             <div
               className={`create-lot-page__dropzone${isDragging ? ' is-dragging' : ''}`}
@@ -287,7 +287,7 @@ function CreateLotPage() {
             </div>
           </section>
 
-          <section className="create-lot-page__card create-lot-page__characteristics-card" aria-labelledby="create-characteristics-heading">
+          {draft.type === 'product' && <section className="create-lot-page__card create-lot-page__characteristics-card" aria-labelledby="create-characteristics-heading">
             <h2 id="create-characteristics-heading">Характеристики</h2>
             <p className="create-lot-page__section-note">Набор полей зависит от выбранной категории</p>
             {categoryFields.length ? (
@@ -302,7 +302,7 @@ function CreateLotPage() {
             ) : (
               <div className="create-lot-page__hint">Выберите категорию — здесь появятся дополнительные характеристики, которые для нее предусмотрены.</div>
             )}
-          </section>
+          </section>}
 
           <section className="create-lot-page__card create-lot-page__price-card" aria-labelledby="create-price-heading">
             <h2 id="create-price-heading">Стоимость и обмен</h2>
