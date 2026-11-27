@@ -16,6 +16,7 @@ import { CatalogPage } from './pages/CatalogPage/CatalogPage'
 import { AuthPage } from './pages/AuthPage/AuthPage'
 import { LotDetailsPage } from './pages/LotDetailsPage/LotDetailsPage'
 import { CreateLotPage } from './pages/CreateLotPage/CreateLotPage'
+import { EditLotPage } from './pages/EditLotPage/EditLotPage'
 
 function ScrollOnNavigation() {
   const { pathname, search, hash } = useLocation()
@@ -37,9 +38,10 @@ function App() {
   const location = useLocation()
   const isAuthPage = location.pathname === '/login' || location.pathname === '/register'
   const isCreateLotPage = location.pathname === '/lots/new'
+  const isEditLotPage = /^\/lots\/[^/]+\/edit$/.test(location.pathname)
 
   return (
-    <div className={isAuthPage ? 'auth-app' : location.pathname === '/' ? 'home-page' : location.pathname === '/catalog' ? 'catalog-app' : isCreateLotPage ? 'create-lot-app' : location.pathname.startsWith('/lots/') ? 'lot-details-app' : 'app-page'}>
+    <div className={isAuthPage ? 'auth-app' : location.pathname === '/' ? 'home-page' : location.pathname === '/catalog' ? 'catalog-app' : isCreateLotPage || isEditLotPage ? 'create-lot-app' : location.pathname.startsWith('/lots/') ? 'lot-details-app' : 'app-page'}>
       <ScrollOnNavigation />
       <Header showDemoCatalogUser={location.pathname === '/catalog' || location.pathname.startsWith('/lots/')} />
 
@@ -57,6 +59,7 @@ function App() {
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/lots/:id" element={<LotDetailsPage />} />
         <Route path="/lots/new" element={<CreateLotPage />} />
+        <Route path="/lots/:id/edit" element={<EditLotPage />} />
         <Route path="/login" element={<AuthPage mode="login" />} />
         <Route path="/register" element={<AuthPage mode="register" />} />
         <Route path="/map" element={<PreviewPage title="Карта объявлений" description="Интерактивную карту подключим вместе с геоданными объявлений. Сейчас можно просмотреть предложения в каталоге." />} />
