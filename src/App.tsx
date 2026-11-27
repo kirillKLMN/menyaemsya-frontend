@@ -11,9 +11,10 @@ import { Benefits } from './components/Benefits'
 import { PopularCategories } from './components/PopularCategories'
 import { FreshLots } from './components/FreshLots'
 import { mockLots } from './data/mockLots'
-import { LotDetailsPage, PreviewPage } from './pages/DemoPages'
+import { PreviewPage } from './pages/DemoPages'
 import { CatalogPage } from './pages/CatalogPage/CatalogPage'
 import { AuthPage } from './pages/AuthPage/AuthPage'
+import { LotDetailsPage } from './pages/LotDetailsPage/LotDetailsPage'
 
 function ScrollOnNavigation() {
   const { pathname, search, hash } = useLocation()
@@ -36,9 +37,9 @@ function App() {
   const isAuthPage = location.pathname === '/login' || location.pathname === '/register'
 
   return (
-    <div className={isAuthPage ? 'auth-app' : location.pathname === '/' ? 'home-page' : location.pathname === '/catalog' ? 'catalog-app' : 'app-page'}>
+    <div className={isAuthPage ? 'auth-app' : location.pathname === '/' ? 'home-page' : location.pathname === '/catalog' ? 'catalog-app' : location.pathname.startsWith('/lots/') && location.pathname !== '/lots/new' ? 'lot-details-app' : 'app-page'}>
       <ScrollOnNavigation />
-      <Header showDemoCatalogUser={location.pathname === '/catalog'} />
+      <Header showDemoCatalogUser={location.pathname === '/catalog' || (location.pathname.startsWith('/lots/') && location.pathname !== '/lots/new')} />
 
       <Routes>
         <Route path="/" element={
