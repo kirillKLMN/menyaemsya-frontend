@@ -1,0 +1,643 @@
+.lot-details-app {
+  min-height: 100vh;
+  background: #f3f6fd;
+}
+
+.lot-details-app .site-footer__container {
+  min-height: 160px;
+}
+
+@media (min-width: 801px) {
+  .lot-details-app .site-header {
+    border-bottom: 1px solid #dfe6ef;
+    background: #fff;
+    backdrop-filter: none;
+  }
+
+  .lot-details-app .site-header--catalog-demo .site-header__account-navigation {
+    display: none;
+  }
+}
+
+.lot-details-page {
+  min-height: 1776px;
+  color: #14253e;
+  font-family: var(--font-body);
+}
+
+.lot-details-page__container {
+  width: calc(100% - 140px);
+  max-width: 1300px;
+  margin-inline: auto;
+  padding-top: 30px;
+}
+
+.lot-details-page__breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: #68778d;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.lot-details-page__breadcrumbs a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lot-details-page__breadcrumbs a:hover,
+.lot-details-page__meta a:hover {
+  color: #2f5bea;
+  text-decoration: underline;
+}
+
+.lot-details-page__top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 764fr) minmax(0, 493fr);
+  gap: 43px;
+  margin-top: 30px;
+}
+
+.lot-details-page__gallery,
+.lot-details-page__right-column {
+  min-width: 0;
+}
+
+.lot-details-page__main-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 764 / 582;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e8eef7;
+}
+
+.lot-details-page__main-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lot-details-page__image-unavailable {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  padding: 24px;
+  color: #68778d;
+  text-align: center;
+}
+
+.lot-details-page__type-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-flex;
+  min-height: 35px;
+  align-items: center;
+  padding: 4px 18px;
+  border-radius: 10px;
+  background: #2f5bea;
+  color: #fff;
+  font: 500 18px/27px var(--font-body);
+}
+
+.lot-details-page__image-counter {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  min-width: 56px;
+  padding: 5px 9px;
+  border-radius: 10px;
+  background: #fff;
+  color: #2f5bea;
+  font: 500 16px/20px var(--font-body);
+  text-align: center;
+}
+
+.lot-details-page__thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.lot-details-page__thumbnail {
+  width: 100%;
+  aspect-ratio: 183 / 102;
+  overflow: hidden;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  background: #e8eef7;
+  color: #68778d;
+  font: 400 13px/17px var(--font-body);
+  cursor: pointer;
+}
+
+.lot-details-page__thumbnail.is-selected {
+  border-color: #2f5bea;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.lot-details-page__thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lot-details-page__thumbnail span {
+  display: grid;
+  height: 100%;
+  place-items: center;
+}
+
+.lot-details-page__right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lot-details-page__listing-card,
+.lot-details-page__seller-card,
+.lot-details-page__description-card,
+.lot-details-page__characteristics {
+  border: 1px solid #dfe6ef;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.lot-details-page__listing-card {
+  min-height: 582px;
+  padding: 40px 30px;
+}
+
+.lot-details-page__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #68778d;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.lot-details-page__meta a {
+  color: #2f5bea;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.lot-details-page__listing-card h1 {
+  min-height: 76px;
+  margin: 26px 0 24px;
+  color: #14253e;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+.lot-details-page__price-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lot-details-page__price-block span,
+.lot-details-page__wanted > span,
+.lot-details-page__wanted p {
+  color: #68778d;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.lot-details-page__price-block strong {
+  color: #14253e;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 37px;
+}
+
+.lot-details-page__wanted {
+  display: flex;
+  min-height: 120px;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: #faf3ff;
+}
+
+.lot-details-page__wanted strong {
+  margin-top: 8px;
+  color: #000;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.lot-details-page__wanted p {
+  margin: 8px 0 0;
+}
+
+.lot-details-page__actions {
+  display: grid;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.lot-details-page__offer-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 54px;
+  gap: 20px;
+}
+
+.lot-details-page__offer,
+.lot-details-page__message,
+.lot-details-page__favorite {
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2f5bea;
+  border-radius: 18px;
+  font: 500 17px/22px var(--font-body);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.lot-details-page__offer {
+  background: #2f5bea;
+  color: #fff;
+}
+
+.lot-details-page__offer:hover {
+  background: #234dd9;
+}
+
+.lot-details-page__message {
+  background: #fff;
+  color: #2f5bea;
+}
+
+.lot-details-page__message:hover {
+  background: #f3f6fd;
+}
+
+.lot-details-page__favorite {
+  padding: 13px;
+  border-color: #a7b2c5;
+  background: #fff;
+  color: #68778d;
+}
+
+.lot-details-page__favorite.is-active {
+  border-color: #2f5bea;
+  color: #2f5bea;
+}
+
+.lot-details-page__favorite svg {
+  width: 26px;
+  height: 26px;
+}
+
+.lot-details-page__seller-card {
+  display: flex;
+  min-height: 122px;
+  align-items: center;
+  gap: 28px;
+  padding: 18px 30px;
+}
+
+.lot-details-page__seller-avatar {
+  display: grid;
+  width: 84px;
+  height: 84px;
+  flex: 0 0 84px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1d9ff;
+  color: #7b35aa;
+  font-family: var(--font-heading);
+  font-size: 24px;
+}
+
+.lot-details-page__seller-card h2 {
+  margin: 0 0 4px;
+  color: #000;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23px;
+}
+
+.lot-details-page__seller-card p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: #68778d;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.lot-details-page__star {
+  color: #f9c400;
+  font-size: 24px;
+  line-height: 20px;
+}
+
+.lot-details-page__description-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 764fr) minmax(0, 496fr);
+  align-items: start;
+  gap: 40px;
+  margin-top: 24px;
+}
+
+.lot-details-page__description-card,
+.lot-details-page__characteristics {
+  min-width: 0;
+  padding: 40px 30px;
+}
+
+.lot-details-page__description-card {
+  min-height: 388px;
+}
+
+.lot-details-page__characteristics {
+  min-height: 454px;
+}
+
+.lot-details-page__description-grid h2 {
+  margin: 0 0 20px;
+  color: #000;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.lot-details-page__description-card p {
+  margin: 0 0 20px;
+  color: #68778d;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.lot-details-page__description-card p:last-child {
+  margin-bottom: 0;
+}
+
+.lot-details-page__characteristics dl {
+  margin: 0;
+}
+
+.lot-details-page__characteristics dl > div {
+  display: flex;
+  min-height: 50px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding-top: 0;
+  border-bottom: 1px solid #cbd5e1;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.lot-details-page__characteristics dl > div + div {
+  padding-top: 16px;
+}
+
+.lot-details-page__characteristics dl > div:last-child {
+  border-bottom: 0;
+}
+
+.lot-details-page__characteristics dt {
+  color: #68778d;
+}
+
+.lot-details-page__characteristics dd {
+  margin: 0;
+  color: #000;
+  text-align: right;
+}
+
+.lot-details-page__related {
+  margin-top: 88px;
+}
+
+.lot-details-page__related h2 {
+  margin: 0 0 30px;
+  color: #000;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.lot-details-page__related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.lot-details-page .lot-card--catalog {
+  position: relative;
+  height: 303px;
+  min-height: 303px;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 18px;
+}
+
+.lot-details-page .lot-card--catalog .lot-card__image-wrapper {
+  height: 178px;
+}
+
+.lot-details-page .lot-card--catalog .lot-card__content {
+  gap: 10px;
+  padding: 0 2px;
+}
+
+.lot-details-page .lot-card--catalog .lot-card__title {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.lot-details-page .lot-card--catalog .lot-card__exchange {
+  display: none;
+}
+
+.lot-details-page .lot-card--catalog .lot-card__price {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.lot-details-page .lot-card__favorite {
+  position: absolute;
+  z-index: 1;
+  top: 22px;
+  right: 22px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  padding: 7px;
+  border: 0;
+  border-radius: 11px;
+  background: #fff;
+  color: #68778d;
+  cursor: pointer;
+}
+
+.lot-details-page .lot-card__favorite svg {
+  width: 100%;
+  height: 100%;
+}
+
+.lot-details-page .lot-card__favorite.is-active {
+  color: #2f5bea;
+}
+
+/* The current catalog photos include Figma's badge/heart directly in the image. */
+.lot-details-page .lot-card--embedded-image-ui .lot-card__type {
+  display: none;
+}
+
+.lot-details-page .lot-card--embedded-image-ui .lot-card__image {
+  object-fit: fill;
+}
+
+.lot-details-page .lot-card--embedded-image-ui .lot-card__favorite:not(.is-active) {
+  background: transparent;
+  color: transparent;
+}
+
+.lot-details-page .lot-card--embedded-image-ui .lot-card__favorite:not(.is-active) svg {
+  opacity: 0;
+}
+
+.lot-details-page a:focus-visible,
+.lot-details-page button:focus-visible {
+  outline: 3px solid #2f5bea;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1100px) {
+  .lot-details-page__container {
+    width: calc(100% - 48px);
+  }
+
+  .lot-details-page__top-grid,
+  .lot-details-page__description-grid {
+    gap: 24px;
+  }
+
+  .lot-details-page__listing-card,
+  .lot-details-page__description-card,
+  .lot-details-page__characteristics {
+    padding: 28px 22px;
+  }
+
+  .lot-details-page__listing-card h1 {
+    font-size: 28px;
+  }
+
+  .lot-details-page__related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* A safe provisional layout until the designer supplies a mobile Figma frame. */
+@media (max-width: 800px) {
+  .lot-details-page {
+    min-height: 0;
+    padding-bottom: 60px;
+  }
+
+  .lot-details-page__container {
+    width: calc(100% - 40px);
+    padding-top: 22px;
+  }
+
+  .lot-details-page__top-grid,
+  .lot-details-page__description-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .lot-details-page__main-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .lot-details-page__thumbnails {
+    gap: 7px;
+    margin-top: 12px;
+  }
+
+  .lot-details-page__listing-card {
+    min-height: 0;
+  }
+
+  .lot-details-page__listing-card h1 {
+    min-height: 0;
+  }
+
+  .lot-details-page__description-card,
+  .lot-details-page__characteristics {
+    min-height: 0;
+  }
+
+  .lot-details-page__description-card p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .lot-details-page__related {
+    margin-top: 50px;
+  }
+
+  .lot-details-page__related-grid {
+    gap: 12px;
+  }
+
+  .lot-details-page .lot-card--catalog {
+    height: auto;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lot-details-page__related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lot-details-page__listing-card h1 {
+    font-size: 25px;
+    line-height: 32px;
+  }
+
+  .lot-details-page__type-badge {
+    top: 12px;
+    left: 12px;
+  }
+
+  .lot-details-page__offer-row {
+    gap: 10px;
+  }
+
+  .lot-details-page__description-grid h2,
+  .lot-details-page__related h2 {
+    font-size: 25px;
+  }
+}
