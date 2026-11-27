@@ -4,7 +4,11 @@ import { Link } from 'react-router'
 import menuIcon from '../assets/figma/menu-icon.svg'
 import './Header.css'
 
-function Header() {
+type HeaderProps = {
+  showDemoCatalogUser?: boolean
+}
+
+function Header({ showDemoCatalogUser = false }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -23,7 +27,7 @@ function Header() {
   }
 
   return (
-    <header className={`site-header${isMenuOpen ? ' site-header--open' : ''}`}>
+    <header className={`site-header${isMenuOpen ? ' site-header--open' : ''}${showDemoCatalogUser ? ' site-header--catalog-demo' : ''}`}>
       {isMenuOpen && createPortal(
         <button
           className="site-header__backdrop"
@@ -81,6 +85,13 @@ function Header() {
             </ul>
           </nav>
         </div>
+
+        {showDemoCatalogUser && (
+          <div className="site-header__demo-user" title="Демонстрационный профиль: авторизация пока не подключена">
+            <span className="site-header__demo-avatar" aria-hidden="true">АС</span>
+            <span>Алексей</span>
+          </div>
+        )}
 
         <button
           className="site-header__menu-toggle"

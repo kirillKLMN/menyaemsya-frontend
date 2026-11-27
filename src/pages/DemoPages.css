@@ -138,3 +138,12 @@
     gap: 20px;
   }
 }
+.demo-page__missing-image {
+  display: grid;
+  min-height: 280px;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #eee5ff, #e4efff);
+  color: #68778d;
+  text-align: center;
+}
