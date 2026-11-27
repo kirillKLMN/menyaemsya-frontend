@@ -13,10 +13,15 @@
   .create-lot-app .site-header--catalog-demo .site-header__account-navigation {
     display: none;
   }
+
+  .create-lot-app .site-header__navigation a[href$='/catalog'] {
+    color: #2f5bea;
+  }
 }
 
 .create-lot-app .site-footer__container {
   min-height: 160px;
+  padding-bottom: 70px;
 }
 
 .create-lot-page {

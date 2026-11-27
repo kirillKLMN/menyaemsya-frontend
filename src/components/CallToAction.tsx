@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import './CallToAction.css'
 
 function CallToAction() {
@@ -15,12 +16,12 @@ function CallToAction() {
           что вам предложит система
         </h2>
 
-        <a
+        <Link
           className="call-to-action__button"
-          href="/lots/new"
+          to="/lots/new"
         >
           Начать обмен
-        </a>
+        </Link>
       </div>
     </section>
   )

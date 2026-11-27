@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import heroIllustration from '../assets/figma/hero-swap.png'
 import './Hero.css'
 
@@ -21,19 +22,19 @@ function Hero() {
             </p>
 
             <div className="hero__actions">
-              <a
+              <Link
                 className="hero__button hero__button--primary"
-                href="/lots/new"
+                to="/lots/new"
               >
                 Создать лот
-              </a>
+              </Link>
 
-              <a
+              <Link
                 className="hero__button hero__button--secondary"
-                href="/catalog"
+                to="/catalog"
               >
                 Смотреть каталог
-              </a>
+              </Link>
             </div>
           </div>
         </div>

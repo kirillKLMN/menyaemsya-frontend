@@ -64,7 +64,7 @@ function Header({ showDemoCatalogUser = false }: HeaderProps) {
                 </Link>
               </li>
               <li>
-                <a href="/#how-it-works" onClick={closeMenu}>
+                <Link to="/#how-it-works" onClick={closeMenu}>
                   <svg className="site-header__nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.8" />
                     <path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -73,7 +73,7 @@ function Header({ showDemoCatalogUser = false }: HeaderProps) {
                   <svg className="site-header__nav-chevron" viewBox="0 0 7 12" fill="none" aria-hidden="true">
                     <path d="m1.4 1.5 4.2 4.5-4.2 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
